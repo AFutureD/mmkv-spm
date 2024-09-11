@@ -2,8 +2,8 @@ name: Fetch Update and Publish Release
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "4 5 * * *"
+  # schedule:
+  #   - cron: "4 5 * * *"
 
 jobs:
   fetch-and-release:
