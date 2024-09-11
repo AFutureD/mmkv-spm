@@ -10,8 +10,8 @@ echo "BUILD_TAG: $BUILD_TAG"
 echo "MMKV_REPO_DIR: $MMKV_REPO_DIR"
 echo "MMKV_XC_MANIFEST_NAME: $MMKV_XC_MANIFEST_NAME"
 
-pushd MMKV_REPO_DIR > /dev/null
-echo "[*] Changed to MMKV_REPO_DIR $PWD"
+pushd "$MMKV_REPO_DIR" > /dev/null
+echo "[*] Changed to $MMKV_REPO_DIR $PWD"
 
 rm -rf archives
 xcodebuild archive \
