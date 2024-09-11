@@ -20,8 +20,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "MMKV",
-            url: "https://github.com/AFutureD/mmkv-spm/releases/download/v1.3.9/MMKV.xcframework.zip",
-            checksum: "355f301706a9144c81aa2ff5b6dd87b315792f913ff02b9c79869841e114b7ea"
+            url: "https://github.com/AFutureD/mmkv-spm/releases/download//MMKV.xcframework.zip",
+            checksum: "2122b38add21663ea7345cec0ee394890f095d6196c45c92c519b7c795026c45"
         )
     ]
 )
