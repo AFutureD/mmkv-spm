@@ -73,36 +73,36 @@ jobs:
           ./scripts/build-mmkv.sh "$BUILD_TAG"
 
 
-      - name: Commit & Push changes
-        uses: actions-js/push@master
-        if: env.UPDATE_NEEDED == 'true'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          tags: true
+      # - name: Commit & Push changes
+      #   uses: actions-js/push@master
+      #   if: env.UPDATE_NEEDED == 'true'
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     tags: true
 
-      - name: Make Storage Release
-        if: env.UPDATE_NEEDED == 'true'
-        uses: softprops/action-gh-release@v0.1.15
-        with:
-          tag_name: ${{ env.STORAGE_RELEASE_TAG }}
-          body: |
-            # Updated Release
-            This release was made by automation.
-          draft: false
-          prerelease: false
-          files: |
-            libssl.xcframework.zip
+      # - name: Make Storage Release
+      #   if: env.UPDATE_NEEDED == 'true'
+      #   uses: softprops/action-gh-release@v0.1.15
+      #   with:
+      #     tag_name: ${{ env.STORAGE_RELEASE_TAG }}
+      #     body: |
+      #       # Updated Release
+      #       This release was made by automation.
+      #     draft: false
+      #     prerelease: false
+      #     files: |
+      #       libssl.xcframework.zip
 
-      - name: Make Release
-        if: env.UPDATE_NEEDED == 'true'
-        uses: softprops/action-gh-release@v0.1.15
-        with:
-          tag_name: ${{ env.RELEASE_TAG }}
-          body: |
-            # Package
-            This release was made by automation.
-          draft: false
-          prerelease: false
+      # - name: Make Release
+      #   if: env.UPDATE_NEEDED == 'true'
+      #   uses: softprops/action-gh-release@v0.1.15
+      #   with:
+      #     tag_name: ${{ env.RELEASE_TAG }}
+      #     body: |
+      #       # Package
+      #       This release was made by automation.
+      #     draft: false
+      #     prerelease: false
 
       - name: Keepalive Workflow
         uses: gautamkrishnar/keepalive-workflow@v2
