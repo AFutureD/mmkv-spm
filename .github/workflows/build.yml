@@ -25,10 +25,10 @@ jobs:
           MMKV_TAG=$(wget -q -O- https://api.github.com/repos/Tencent/MMKV/releases/latest | jq -r '.tag_name')
           echo "[*] upstream mmkv tag: $MMKV_TAG"
 
-          # make sure tag is in format v-%d.%d.%d
+          # make sure tag is in format v%d.%d.%d
           if [[ ! $MMKV_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "[*] invalid mmkv tag, skip pipeline: $MMKV_TAG"
-            exit 0
+            exit 1
           fi
 
           MAJOR_VERSION=$(echo $MMKV_TAG | cut -d'v' -f2 | cut -d'.' -f1)
