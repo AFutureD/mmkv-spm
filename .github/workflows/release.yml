@@ -94,7 +94,7 @@ jobs:
                 targets: [
                     .binaryTarget(
                         name: "MMKV",
-                        url: "https://github.com/devjia/mmkv-spm/releases/download/${{ env.VERSION }}/MMKV.xcframework.zip",
+                        url: "https://github.com/AFutureD/mmkv-spm/releases/download/${{ env.VERSION }}/MMKV.xcframework.zip",
                         checksum: "${{ env.CHECKSUM }}"
                     )
                 ]
