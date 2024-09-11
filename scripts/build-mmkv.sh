@@ -80,7 +80,8 @@ xcodebuild archive \
     -destination "generic/platform=iOS" \
     -archivePath "archives/MMKV-iOS" \
     SKIP_INSTALL=NO \
-    BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+    >/dev/null 2>&1
 
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
@@ -89,7 +90,8 @@ xcodebuild archive \
     -destination "generic/platform=iOS Simulator" \
     -archivePath "archives/MMKV-iOS-Simulator" \
     SKIP_INSTALL=NO \
-    BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+    >/dev/null 2>&1
 
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
@@ -98,13 +100,14 @@ xcodebuild archive \
     -destination "generic/platform=macOS" \
     -archivePath "archives/MMKV-macOS" \
     SKIP_INSTALL=NO \
-    BUILD_LIBRARY_FOR_DISTRIBUTION=YES
+    BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+    >/dev/null 2>&1
 
 xcodebuild \
     -create-xcframework \
-    -archive archives/MMKV-iOS.xcarchive -library libMMKV.a \
-    -archive archives/MMKV-macOS.xcarchive -library libMMKV.a \
-    -archive archives/MMKV-iOS-Simulator.xcarchive -library libMMKV.a \
+    -archive archives/MMKV-iOS.xcarchive -library libMMKV.a -headers iOS/MMKV/MMKV \
+    -archive archives/MMKV-macOS.xcarchive -library libMMKV.a -headers iOS/MMKV/MMKV \
+    -archive archives/MMKV-iOS-Simulator.xcarchive -library libMMKV.a -headers iOS/MMKV/MMKV \
     -output archives/MMKV-Static.xcframework
 
 zip -r -X "archives/$MMKV_XC_MANIFEST_NAME" "./archives/MMKV-Static.xcframework"
