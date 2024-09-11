@@ -16,7 +16,7 @@ jobs:
         run: |
 
           MMKV_TAG=$(wget -q -O- https://api.github.com/repos/Tencent/MMKV/releases/latest | jq -r '.tag_name')
-          echo "[*] upstream openssl tag: $MMKV_TAG"
+          echo "[*] upstream mmkv tag: $MMKV_TAG"
 
           # make sure tag is in format v-%d.%d.%d
           if [[ ! $MMKV_TAG =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
@@ -44,7 +44,7 @@ jobs:
               echo "[*] tag $RELEASE_TAG already exists, exiting"
               echo "UPDATE_NEEDED=false" >> $GITHUB_ENV
           else
-              echo "[*] tag $RELEASE_TAG does not exist, pass to build"
+              echo "[*] tag $RELEASE_TAG does not exist, building"
               echo "UPDATE_NEEDED=true" >> $GITHUB_ENV
           fi
 
