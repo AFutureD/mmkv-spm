@@ -6,6 +6,9 @@ on:
   #   - cron: "4 5 * * *"
 
 env:
+  BUILD_TAG: ""
+  RELEASE_TAG: ""
+  UPDATE_NEEDED: false
   MMKV_REPO_DIR: "./mmkv-repo"
   MMKV_XC_MANIFEST_NAME: MMKV.xcframework.zip
 
@@ -64,7 +67,7 @@ jobs:
         with:
           repository: 'Tencent/MMKV'
           ref: ${{ env.BUILD_TAG }}
-          path: $MMKV_REPO_DIR
+          path: ${{ env.MMKV_REPO_DIR }}
 
       - name: Build If Needed
         if: env.UPDATE_NEEDED == 'true'
