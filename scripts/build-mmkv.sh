@@ -82,6 +82,7 @@ xcodebuild archive \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
     >/dev/null 2>&1
+echo "[*] MMKV-iOS.xcarchive created"
 
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
@@ -92,6 +93,7 @@ xcodebuild archive \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
     >/dev/null 2>&1
+echo "[*] MMKV-iOS-Simulator.xcarchive created"
 
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
@@ -102,13 +104,16 @@ xcodebuild archive \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
     >/dev/null 2>&1
+echo "[*] MMKV-macOS.xcarchive created"
 
 xcodebuild \
     -create-xcframework \
     -archive archives/MMKV-iOS.xcarchive -library libMMKV.a -headers iOS/MMKV/MMKV \
     -archive archives/MMKV-macOS.xcarchive -library libMMKV.a -headers iOS/MMKV/MMKV \
     -archive archives/MMKV-iOS-Simulator.xcarchive -library libMMKV.a -headers iOS/MMKV/MMKV \
-    -output archives/MMKV-Static.xcframework
+    -output archives/MMKV-Static.xcframework \
+    >/dev/null 2>&1
+echo "[*] MMKV-Static.xcframework created"
 
 zip -r -X "archives/$MMKV_XC_MANIFEST_NAME" "./archives/MMKV-Static.xcframework"
 echo "[*] $MMKV_XC_MANIFEST_NAME created"
