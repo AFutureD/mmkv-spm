@@ -67,7 +67,7 @@ jobs:
         with:
           repository: 'Tencent/MMKV'
           ref: ${{ env.BUILD_TAG }}
-          path: ${{ env.MMKV_REPO_DIR }}
+          path: "./mmkv-repo"
 
       - name: Build If Needed
         if: env.UPDATE_NEEDED == 'true'
