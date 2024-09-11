@@ -69,10 +69,10 @@ xcodebuild \
 echo "[*] MMKV.xcframework created"
 
 zip -r -X "archives/$MMKV_XC_MANIFEST_NAME" "./archives/MMKV.xcframework"
-ehoc "[*] $MMKV_XC_MANIFEST_NAME created"
+echo "[*] $MMKV_XC_MANIFEST_NAME created"
 
 mv "archives/$MMKV_XC_MANIFEST_NAME" "/tmp/$MMKV_XC_MANIFEST_NAME"
-ehoc "[*] $MMKV_XC_MANIFEST_NAME moved to /tmp/$MMKV_XC_MANIFEST_NAME"
+echo "[*] $MMKV_XC_MANIFEST_NAME moved to /tmp/$MMKV_XC_MANIFEST_NAME"
 
 popd > /dev/null
 echo "[*] Back to the root directory $PWD"
