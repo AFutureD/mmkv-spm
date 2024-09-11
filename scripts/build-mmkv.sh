@@ -63,6 +63,7 @@ xcodebuild \
     # -archive archives/MMKV-tvOS.xcarchive -framework MMKV.framework \
     # -archive archives/MMKV-macOS.xcarchive -framework MMKV.framework \
     -output archives/MMKV.xcframework
+echo "[*] MMKV.xcframework created"
 
 zip -r -X "archives/$MMKV_XC_MANIFEST_NAME" "archives/MMKV.xcframework"
 ehoc "[*] $MMKV_XC_MANIFEST_NAME created"
