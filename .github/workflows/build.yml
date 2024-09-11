@@ -73,7 +73,7 @@ jobs:
           echo "[*] build tag: $BUILD_TAG"
           echo "[*] release tag: $RELEASE_TAG"
 
-          EST_XCFRAMEWORK_DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/download/$RELEASE_TAG/$(MMKV_XC_MANIFEST_NAME)"
+          EST_XCFRAMEWORK_DOWNLOAD_URL="https://github.com/${{ github.repository }}/releases/download/$RELEASE_TAG/$MMKV_XC_MANIFEST_NAME"
           echo "[*] estimated xcframework download url: $EST_XCFRAMEWORK_DOWNLOAD_URL"
 
           ./scripts/build-mmkv.sh "$BUILD_TAG" "$MMKV_REPO_DIR" "$MMKV_XC_MANIFEST_NAME"
