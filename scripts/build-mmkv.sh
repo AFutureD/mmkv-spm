@@ -20,7 +20,7 @@ echo "[*] Changed to $MMKV_REPO_DIR $PWD"
 rm -rf archives
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
-    -scheme MMKV \
+    -scheme "MMKV Static" \
     -configuration Release \
     -destination "generic/platform=iOS" \
     -archivePath "archives/MMKV-iOS" \
@@ -31,7 +31,7 @@ echo "[*] MMKV-iOS.xcarchive created"
 
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
-    -scheme MMKV \
+    -scheme "MMKV Static" \
     -configuration Release \
     -destination "generic/platform=iOS Simulator" \
     -archivePath "archives/MMKV-iOS-Simulator" \
@@ -42,7 +42,7 @@ echo "[*] MMKV-iOS-Simulator.xcarchive created"
 
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
-    -scheme MMKV \
+    -scheme "MMKV Static" \
     -configuration Release \
     -destination "generic/platform=tvOS" \
     -archivePath "archives/MMKV-tvOS" \
@@ -53,7 +53,7 @@ echo "[*] MMKV-tvOS.xcarchive created"
 
 xcodebuild archive \
     -workspace MMKV.xcworkspace \
-    -scheme MMKV \
+    -scheme "MMKV Static" \
     -configuration Release \
     -destination "generic/platform=macOS" \
     -archivePath "archives/MMKV-macOS" \
