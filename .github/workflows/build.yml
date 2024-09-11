@@ -80,7 +80,7 @@ jobs:
           echo "[*] estimated xcframework download url: $EST_XCFRAMEWORK_DOWNLOAD_URL"
 
           ./scripts/build-mmkv.sh "$BUILD_TAG" "$MMKV_REPO_DIR" "$MMKV_XC_MANIFEST_NAME"
-          ./scripts/build-manifest.sh "$MMKV_XC_MANIFEST_NAME" "$RELEASE_TAG" "$EST_XCFRAMEWORK_DOWNLOAD_URL"
+          ./scripts/build-manifest.sh "$MMKV_XC_MANIFEST_NAME" "$EST_XCFRAMEWORK_DOWNLOAD_URL"
 
       - name: Commit & Push changes
         uses: actions-js/push@master
