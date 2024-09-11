@@ -1,5 +1,6 @@
-// swift-tools-version: 5.10
+// swift-tools-version:5.10
 // The swift-tools-version declares the minimum version of Swift required to build this package.
+
 
 import PackageDescription
 
@@ -19,8 +20,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "MMKV",
-            url: "https://github.com/devjia/mmkv-spm/releases/download/v1.3.9/MMKV.xcframework.zip",
-            checksum: "b55a101c846d8a6663e5e47863a13e805a6e3f8d0f898f29543f7c9e4b6d6ea9"
+            url: "https://github.com/AFutureD/mmkv-spm/releases/download/v1.3.9/MMKV.xcframework.zip",
+            checksum: ""
         )
     ]
 )
