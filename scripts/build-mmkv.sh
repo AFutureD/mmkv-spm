@@ -59,10 +59,12 @@ echo "[*] MMKV-iOS.xcarchive created"
 xcodebuild \
     -create-xcframework \
     -archive archives/MMKV-iOS.xcarchive -framework MMKV.framework \
+    -output archives/MMKV.xcframework
+    
     # -archive archives/MMKV-iOS-Simulator.xcarchive -framework MMKV.framework \
     # -archive archives/MMKV-tvOS.xcarchive -framework MMKV.framework \
     # -archive archives/MMKV-macOS.xcarchive -framework MMKV.framework \
-    -output archives/MMKV.xcframework
+    
 
 echo "[*] MMKV.xcframework created"
 
