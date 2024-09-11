@@ -37,7 +37,7 @@ jobs:
 
       - name: Check If Compile Required
         run: |
-          echo "[*] wants build tag: $BUILD_TAG"
+          echo "[*] wants build tag: $RELEASE_TAG"
 
           git pull --tags
           if git rev-parse "$RELEASE_TAG" >/dev/null 2>&1; then
@@ -49,11 +49,13 @@ jobs:
           fi
 
       - name: Select Xcode
+        if: env.UPDATE_NEEDED == 'true'
         uses: maxim-lobanov/setup-xcode@v1
         with:
           xcode-version: latest-stable
 
       - name: Checkout MMKV
+        if: env.UPDATE_NEEDED == 'true'
         uses: actions/checkout@v4
         with:
           repository: 'Tencent/MMKV'
