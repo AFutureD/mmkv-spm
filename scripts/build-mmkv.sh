@@ -11,7 +11,7 @@ echo "MMKV_REPO_DIR: $MMKV_REPO_DIR"
 echo "MMKV_XC_MANIFEST_NAME: $MMKV_XC_MANIFEST_NAME"
 
 echo "---"
-echo  "ls -la"
+echo  "ls $(ls -la)"
 echo "---"
 
 pushd "$MMKV_REPO_DIR" > /dev/null
