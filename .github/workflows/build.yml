@@ -22,7 +22,7 @@ jobs:
       - name: Determine Release Tag
         run: |
 
-          wget -q -O- https://api.github.com/repos/Tencent/MMKV/releases/latest
+          wget -O- https://api.github.com/repos/Tencent/MMKV/releases/latest
 
           echo "-------------------"
 
