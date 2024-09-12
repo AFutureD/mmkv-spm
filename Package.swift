@@ -21,7 +21,7 @@ let package = Package(
         .binaryTarget(
             name: "MMKV",
             url: "https://github.com/AFutureD/mmkv-spm/releases/download/1.3.9/MMKV.xcframework.zip",
-            checksum: "a3358b187edf26919346fc2163c84ad43018232c0fbe455b098b7db59f20a421"
+            checksum: "2aac4670201a4890930ab3371d4ab9c8f54544471aede4290d0396f6bb71885b"
         )
     ]
 )
