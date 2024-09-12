@@ -22,6 +22,10 @@ jobs:
       - name: Determine Release Tag
         run: |
 
+          wget -q -O- https://api.github.com/repos/Tencent/MMKV/releases/latest
+
+          echo "-------------------"
+
           MMKV_TAG=$(wget -q -O- https://api.github.com/repos/Tencent/MMKV/releases/latest | jq -r '.tag_name')
           echo "[*] upstream mmkv tag: $MMKV_TAG"
 
